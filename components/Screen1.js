@@ -28,7 +28,7 @@ const Screen1 = ({ navigation }) => {
         style={styles.textInput}
         value={name}
         onChangeText={setName}
-        placeholder='Type your username here'
+        placeholder='Your Name'
       />
 
 
@@ -105,6 +105,7 @@ const styles = StyleSheet.create({
     margin: 12,
     borderWidth: 3,
     padding: 10,
+    fontSize: 16,
   },
 
   radioButtonContainer: {
@@ -159,8 +160,8 @@ const styles = StyleSheet.create({
   },
  
   title: {
-    fontWeight: "bold",
-    fontSize: 30,
+    fontWeight: "600",
+    fontSize: 45,
     color: '#FFFFFF',
     textAlign: 'center',  
   },

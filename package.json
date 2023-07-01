@@ -9,14 +9,12 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build" 
+    "deploy": "gh-pages -d build"
   },
-
-  
   "dependencies": {
     "@react-navigation/native": "^6.1.6",
     "@react-navigation/native-stack": "^6.9.12",
-    "expo": "~48.0.9",
+    "expo": "^48.0.19",
     "expo-status-bar": "~1.4.4",
     "react": "18.2.0",
     "react-native": "0.71.4",
@@ -26,8 +24,5 @@
   "devDependencies": {
     "@babel/core": "^7.20.0"
   },
-
   "private": true
 }
-
-
