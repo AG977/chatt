@@ -4,7 +4,7 @@ import { StyleSheet, View, Text, TextInput, ImageBackground, TouchableOpacity } 
 
 
 
-const Screen1 = ({ navigation }) => {
+const Start = ({ navigation }) => {
   const [name, setName ] = useState('');
   const [color, setColor ] = useState('');
 
@@ -54,7 +54,7 @@ const Screen1 = ({ navigation }) => {
           </View>
           <TouchableOpacity style={[styles.chatBox, styles.nameBox]}
         title="Start Chatting"
-        onPress={() => navigation.navigate('Screen2', { name: name, color: color})}
+        onPress={() => navigation.navigate('Chat', { name: name, color: color})}
         >
           <Text
                 style={[styles.colorText, styles.chatBoxText]}>Start Chatting</Text>
@@ -93,10 +93,11 @@ const styles = StyleSheet.create({
     width: "88%",
     height: "44%",
     backgroundColor: '#FFFFFF',
-    marginTop: 300,
-    marginBottom: 15,
-    marginLeft: 20,
-    marginRight: 20,
+    marginTop: 150,
+    marginBottom: 200,
+    marginLeft: 25,
+    marginRight: 25,
+    padding: 20,
   },
 
   textInput: {
@@ -168,5 +169,5 @@ const styles = StyleSheet.create({
 
 });
 
-export default Screen1;
+export default Start;
 
