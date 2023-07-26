@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { StyleSheet, View, Text, TextInput, ImageBackground, TouchableOpacity } from 'react-native';
+import { Image, StyleSheet, View, Text, TextInput, ImageBackground, TouchableOpacity } from 'react-native';
 
 
 
@@ -19,40 +19,51 @@ const Start = ({ navigation }) => {
     >
       
    <View style={styles.container}>
-    <View style={styles.titleContainer}>
-          <Text style={styles.title}>Chat App!</Text>
-        </View>
+      <View style={styles.titleContainer}>
+        <Text style={styles.title}>Chat App!</Text>
+      </View>
       
       <View style={styles.subContainer}>
-      <TextInput
-        style={styles.textInput}
-        value={name}
-        onChangeText={setName}
-        placeholder='Your Name'
-      />
+        <View style={styles.textInputContainer}>
+          <Image style={styles.inputBoxIcon} source={require('../assets/avatar.png')} />
+          <TextInput
+            style={styles.textInput}
+            value={name}
+            onChangeText={setName}
+            placeholder='Your Name'
+        />
+      </View>
 
 
 
-<Text>Choose Background Color:</Text> 
-<View style={styles.radioButtonContainer}>
+      <Text style={styles.chooseColorTitle}>Choose Background Color:</Text> 
+      <View style={styles.radioButtonContainer}>
+          <View style={[styles.radioButtonBorder, (color === "#090C08") ? { borderColor: "black" } : null]}>
             <TouchableOpacity
-              style={[styles.radioButton, { backgroundColor: "red" }]}
-              onPress={() => setColor("red")}
-            ></TouchableOpacity>
-            <TouchableOpacity
-              style={[styles.radioButton, { backgroundColor: "blue" }]}
-              onPress={() => setColor("blue")}
-            ></TouchableOpacity>
-            <TouchableOpacity
-              style={[styles.radioButton, { backgroundColor: "green" }]}
-              onPress={() => setColor("green")}
-            ></TouchableOpacity>
-            <TouchableOpacity
-              style={[styles.radioButton, { backgroundColor: "yellow" }]}
-              onPress={() => setColor("yellow")}
+              style={[styles.radioButton, { backgroundColor: "#090C08" }]}
+              onPress={() => setColor("#090C08")}
             ></TouchableOpacity>
           </View>
-          <TouchableOpacity style={[styles.chatBox, styles.nameBox]}
+          <View style={[styles.radioButtonBorder, (color === "#474056") ? { borderColor: "black" } : null]}>
+            <TouchableOpacity
+              style={[styles.radioButton, { backgroundColor: "#474056" }]}
+              onPress={() => setColor("#474056")}
+            ></TouchableOpacity>
+          </View>
+          <View style={[styles.radioButtonBorder, (color === "#8A95A5") ? { borderColor: "black" } : null]}>
+            <TouchableOpacity
+              style={[styles.radioButton, { backgroundColor: "#8A95A5" }]}
+              onPress={() => setColor("#8A95A5")}
+            ></TouchableOpacity>
+          </View>
+          <View style={[styles.radioButtonBorder, (color === "#B9C6AE") ? { borderColor: "black" } : null]}>
+            <TouchableOpacity
+              style={[styles.radioButton, { backgroundColor: "#B9C6AE" }]}
+              onPress={() => setColor("#B9C6AE")}
+            ></TouchableOpacity>
+          </View>
+        </View>
+          <TouchableOpacity style={[styles.chatBox]}
         title="Start Chatting"
         onPress={() => navigation.navigate('Chat', { name: name, color: color})}
         >
@@ -89,38 +100,69 @@ const styles = StyleSheet.create({
   subContainer: {
     flex: 1,
     alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "space-between",
     width: "88%",
     height: "44%",
     backgroundColor: '#FFFFFF',
     marginTop: 150,
-    marginBottom: 200,
+    marginBottom: 25,
     marginLeft: 25,
     marginRight: 25,
-    padding: 20,
+    padding: '6%',
+  },
+
+  textInputContainer:{
+    borderWidth: 3,
+    borderColor: '#757083',
+    width: '100%',
+    flexDirection: 'row',
+    height: 70,
+    padding: 10,
+  },
+
+  inputBoxIcon: {
+    alignSelf: 'center',
+    height: 25,
+    width: 25,
+    opacity: 0.5,
+    marginHorizontal: 10,
   },
 
   textInput: {
-    height: 40,
-    width: "88%",
-    margin: 12,
-    borderWidth: 3,
-    padding: 10,
+   // width: "100%",
     fontSize: 16,
+    color: '#757083',
+    opacity: 0.5,
+    marginLeft: 5,
   },
 
   radioButtonContainer: {
-    width: "70%",
+    width: "90%",
     flexDirection: "row",
     justifyContent: "space-around",
-    margin: 20,
+    alignItems: "flex-start",
+    marginRight: 45,
+  },
+
+  chooseColorTitle: {
+    fontSize: 16,
+    color: '#757083',
+    fontWeight: 300,
+    alignSelf: 'flex-start',
+  },
+
+  radioButtonBorder: {
+    borderColor: 'white',
+    borderWidth: 2,
+    borderRadius: 50,
+    padding: 2,
   },
 
   radioButton: {
     backgroundColor: "black",
-    width: 30,
-    height: 30,
-    borderRadius: 15,
+    width: 55,
+    height: 55,
+    borderRadius: 50,
   },
 
   button: {
@@ -132,12 +174,9 @@ const styles = StyleSheet.create({
 
   chatBox: {
     backgroundColor: '#757083',
-    justifyContent: 'center'
-  },
-
-  nameBox: {
-    height: 50,
-    width: '88%',
+    justifyContent: 'center',
+    alignSelf: 'stretch',
+    height: 70,
     borderWidth: 1,
     borderColor: 'grey',
     borderRadius: 2,
