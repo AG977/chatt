@@ -11,7 +11,7 @@ const Chat = ({ route, navigation }) => {
 
  return (
    <View style={[styles.container,{backgroundColor: color}]}>
-     <Text>Hello Screen2!</Text>
+     <Text style={styles.title}>Hello Screen2!</Text>
    </View>
  );
 }
@@ -21,6 +21,10 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+
+  title: {
+    color: '#FFFFFF',
   }
 });
 

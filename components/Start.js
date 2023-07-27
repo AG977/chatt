@@ -129,7 +129,6 @@ const styles = StyleSheet.create({
   },
 
   textInput: {
-   // width: "100%",
     fontSize: 16,
     color: '#757083',
     opacity: 0.5,
@@ -159,7 +158,6 @@ const styles = StyleSheet.create({
   },
 
   radioButton: {
-    backgroundColor: "black",
     width: 55,
     height: 55,
     borderRadius: 50,
@@ -195,7 +193,7 @@ const styles = StyleSheet.create({
   },
 
   chatBoxText: {
-    color: '#fff',
+    color: '#FFFFFF',
     fontWeight: '600'
   },
  
