@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { StyleSheet, View, Text, KeyboardAvoidingView, Platform } from 'react-native';
+import { StyleSheet, View, KeyboardAvoidingView, Platform } from 'react-native';
 import { GiftedChat } from "react-native-gifted-chat";
 
 
@@ -13,10 +13,7 @@ const Chat = ({ route, navigation }) => {
 
 
   useEffect(() => {
-    navigation.setOptions({ title: name, color: color});
-  }, []);
 
-  useEffect(() => {
     setMessages([
       {
         _id: 1,
@@ -35,17 +32,15 @@ const Chat = ({ route, navigation }) => {
         system: true,
       },
     ]);
+
+    navigation.setOptions({ title: name, color: color});
+
   }, []);
 
   
-  useEffect(() => {
-    navigation.setOptions({ title: name })
-  }, []);
-
 
  return (
   <View style={[styles.container,{backgroundColor: color}]}>
-  <Text style={styles.title}>Hello Screen2!</Text>
   <GiftedChat
       messages={messages}
       onSend={messages => onSend(messages)}

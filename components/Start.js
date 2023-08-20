@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Image, StyleSheet, View, Text, TextInput, ImageBackground, TouchableOpacity } from 'react-native';
+import { Image, StyleSheet, View, Text, TextInput, ImageBackground, TouchableOpacity, KeyboardAvoidingView } from 'react-native';
 
 
 
@@ -74,6 +74,9 @@ const Start = ({ navigation }) => {
         </View>
 
 </View> 
+
+{ Platform.OS === 'ios' ? <KeyboardAvoidingView behavior="padding" /> : null }
+
     </ImageBackground>
   );
 }
@@ -103,7 +106,8 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     width: "88%",
     height: "44%",
-    minHeight: 300,
+    minHeight: 260,
+    maxHeight: 360,
     backgroundColor: '#FFFFFF',
     marginBottom: '6%',
     marginLeft: '6%',
